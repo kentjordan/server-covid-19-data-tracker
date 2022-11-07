@@ -1,0 +1,35 @@
+{
+  "include": [
+    "./src/"
+  ],
+  "compilerOptions": {
+    "outDir": "build",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "@models/*": [
+        "src/api/models/*"
+      ],
+      "@services/*": [
+        "src/api/services/*"
+      ],
+      "@controllers/*": [
+        "src/api/controllers/*"
+      ],
+      "@helpers/*": [
+        "src/api/helpers/*",
+      ],
+      "@routes/*": [
+        "src/api/routes/*",
+      ],
+      "types/*": [
+        "src/types/*",
+      ],
+      "@root/*": [
+        "./*"
+      ]
+    },
+  }
+}

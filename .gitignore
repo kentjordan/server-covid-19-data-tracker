@@ -1,0 +1,8 @@
+# Build directory for distribution
+build/
+
+# Datas
+data/
+
+# NodeJS
+node_modules/
