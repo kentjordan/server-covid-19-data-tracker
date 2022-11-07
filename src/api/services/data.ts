@@ -8,7 +8,7 @@ const Data: Object = JSON.parse(fs.readFileSync(DATA_PATH, 'utf-8'));
 
 const CoutriesCode = Object.keys(Data);
 
-const CountryData = (countryCode: string) => {
+const getCountryData = (countryCode: string) => {
 
     for (const key in Data) {
         if (key === countryCode) {
@@ -24,6 +24,6 @@ const CountryData = (countryCode: string) => {
 export {
     Data as default,
     CoutriesCode,
-    CountryData,
+    getCountryData,
 }
     
