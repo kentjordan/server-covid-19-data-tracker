@@ -2,7 +2,7 @@
 import Data, { CoutriesCode } from '@services/data';
 import { CountriesCases, TotalCases } from './Interfaces';
 
-const CountriesTotalCases: () => Array<TotalCases> = () => {
+const getCountriesTotalCases: () => Array<TotalCases> = () => {
 
     const cases: TotalCases[] = [];
 
@@ -21,25 +21,25 @@ const CountriesTotalCases: () => Array<TotalCases> = () => {
     return cases;
 }
 
-const InternationalCase = () => {
+const getIntlConfirmedCases = () => {
 
-    const countries_total_cases: Array<TotalCases> = CountriesTotalCases();
-    let intl_total_case: number = 0;
+    const countries_total_cases: Array<TotalCases> = getCountriesTotalCases();
+    let intl_confirmed_cases: number = 0;
 
+    // Sum of all country's confirmed cases
     for (let i = 0; i < countries_total_cases.length; i++) {
 
         const country_total_cases = countries_total_cases[i].total_cases === undefined ? 0 : countries_total_cases[i].total_cases;
-        intl_total_case += country_total_cases;
+        intl_confirmed_cases += country_total_cases;
     }
 
     return {
         date: new Date().toDateString(),
-        intl_total_case: intl_total_case,
+        intl_confirmed_cases: intl_confirmed_cases,
     };
 }
 
 const Cases: () => CountriesCases = () => {
-
 
     return {
         cases: []
@@ -49,6 +49,6 @@ const Cases: () => CountriesCases = () => {
 
 export {
     Cases as default,
-    CountriesTotalCases,
-    InternationalCase
+    getCountriesTotalCases,
+    getIntlConfirmedCases
 };
