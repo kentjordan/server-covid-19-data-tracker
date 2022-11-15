@@ -9,6 +9,9 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
+      "@interfaces/*" : [
+        "src/interfaces/*"
+      ],
       "@models/*": [
         "src/api/models/*"
       ],

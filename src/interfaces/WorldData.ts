@@ -1,0 +1,23 @@
+export default interface WorldData {
+    date: string,
+    total_cases: number,
+    new_cases: number,
+    new_cases_smoothed: number,
+    total_deaths: number,
+    new_deaths: number,
+    new_deaths_smoothed: number,
+    total_cases_per_million: number,
+    new_cases_per_million: number,
+    new_cases_smoothed_per_million: number,
+    total_deaths_per_million: number,
+    new_deaths_per_million: number,
+    new_deaths_smoothed_per_million: number,
+    total_vaccinations: number,
+    people_vaccinated: number,
+    people_fully_vaccinated: number,
+    total_boosters: number,
+    total_vaccinations_per_hundred: number,
+    people_vaccinated_per_hundred: number,
+    people_fully_vaccinated_per_hundred: number,
+    total_boosters_per_hundred: number
+}

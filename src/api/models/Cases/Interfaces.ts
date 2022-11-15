@@ -4,7 +4,7 @@ export interface CountryDetails {
 }
 
 // Individual case of Country for each date
-export interface Case extends CountryDetails {
+export interface Case {
     date: string,
     total_cases: number;
     new_cases: number;
@@ -14,12 +14,12 @@ export interface Case extends CountryDetails {
     new_cases_smoothed_per_million: number;
 }
 
-export interface TotalCases extends CountryDetails {
-    date: string,
-    total_cases: number
-}
-
 // All of the country's cases, only includes the associated with cases information
 export interface CountriesCases {
     cases: Array<Case>
+}
+
+export interface TotalCases extends CountryDetails {
+    date: string,
+    total_cases: number
 }

@@ -1,3 +1,5 @@
+import WorldData from '@interfaces/WorldData'
+
 import fs from 'node:fs';
 import path from 'node:path'
 import getProjectRootDir from '@root/root.dir';
@@ -21,9 +23,16 @@ const getCountryData = (countryCode: string) => {
 }
 
 
+const getLatestWorldData: () => WorldData = () => {
+
+    const world_data = Data['OWID_WRL'].data;
+
+    return world_data[world_data.length - 1];
+}
+
 export {
     Data as default,
     CoutriesCode,
     getCountryData,
+    getLatestWorldData,
 }
-    

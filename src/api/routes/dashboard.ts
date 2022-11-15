@@ -1,9 +1,7 @@
 
 import { Router } from 'express';
 
-import {
-    DashboardData,
-} from '@controllers/dashboard.controller'
+import DashboardData from '@controllers/dashboard.controller'
 
 const dashboard = Router();
 

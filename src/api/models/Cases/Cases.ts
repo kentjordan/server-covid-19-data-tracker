@@ -1,6 +1,6 @@
 
-import Data, { CoutriesCode } from '@services/data';
-import { CountriesCases, TotalCases } from './Interfaces';
+import Data, { CoutriesCode, getLatestWorldData } from '@services/data';
+import { Case, CountriesCases, TotalCases } from './Interfaces';
 
 const getCountriesTotalCases: () => Array<TotalCases> = () => {
 
@@ -21,22 +21,19 @@ const getCountriesTotalCases: () => Array<TotalCases> = () => {
     return cases;
 }
 
-const getIntlConfirmedCases = () => {
+const getIntlConfirmedCases: () => Case = () => {
 
-    const countries_total_cases: Array<TotalCases> = getCountriesTotalCases();
-    let intl_confirmed_cases: number = 0;
-
-    // Sum of all country's confirmed cases
-    for (let i = 0; i < countries_total_cases.length; i++) {
-
-        const country_total_cases = countries_total_cases[i].total_cases === undefined ? 0 : countries_total_cases[i].total_cases;
-        intl_confirmed_cases += country_total_cases;
-    }
+    const latest_world_data = getLatestWorldData();
 
     return {
-        date: new Date().toDateString(),
-        intl_confirmed_cases: intl_confirmed_cases,
-    };
+        date: latest_world_data.date,
+        total_cases: latest_world_data.total_cases,
+        new_cases: latest_world_data.new_cases,
+        new_cases_smoothed: latest_world_data.new_cases_smoothed,
+        total_cases_per_million: latest_world_data.total_cases_per_million,
+        new_cases_per_million: latest_world_data.new_cases_per_million,
+        new_cases_smoothed_per_million: latest_world_data.new_cases_smoothed_per_million
+    }
 }
 
 const Cases: () => CountriesCases = () => {
