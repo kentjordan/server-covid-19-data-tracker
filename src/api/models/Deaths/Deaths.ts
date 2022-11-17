@@ -1,6 +1,5 @@
 import Data, { getLatestWorldData } from '@services/data'
-import { TotalDeaths, Death } from "./Interfaces";
-
+import { TotalDeaths, Death } from "@interfaces/models/deaths/IDeaths";
 
 const getCountriesTotalDeaths: () => Array<TotalDeaths> = () => {
 

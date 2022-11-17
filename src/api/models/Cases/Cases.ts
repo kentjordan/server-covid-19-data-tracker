@@ -1,6 +1,6 @@
 
 import Data, { CoutriesCode, getLatestWorldData } from '@services/data';
-import { Case, CountriesCases, TotalCases } from './Interfaces';
+import { Case, CountriesCases, TotalCases } from '@interfaces/models/cases/ICase';
 
 const getCountriesTotalCases: () => Array<TotalCases> = () => {
 

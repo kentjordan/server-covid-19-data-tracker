@@ -22,7 +22,6 @@ const getCountryData = (countryCode: string) => {
 
 }
 
-
 const getLatestWorldData: () => WorldData = () => {
 
     const world_data = Data['OWID_WRL'].data;
